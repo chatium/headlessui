@@ -38,6 +38,10 @@ NODE_ENV=production  npx esbuild $input       --format=esm --outfile=$DST/$name.
 NODE_ENV=production  npx esbuild $input --format=cjs --outfile=$DST/$name.prod.cjs --minify --bundle --pure:React.createElement --define:process.env.TEST_BYPASS_TRACKED_POINTER="false" --define:__DEV__="false" ${sharedOptions[@]} $@ &
 NODE_ENV=development npx esbuild $input --format=cjs --outfile=$DST/$name.dev.cjs           --bundle --pure:React.createElement --define:process.env.TEST_BYPASS_TRACKED_POINTER="false" --define:__DEV__="true" ${sharedOptions[@]} $@ &
 
+# ESM Bundle
+NODE_ENV=production  npx esbuild $input --format=esm --outfile=$DST/$name.prod.esmbundle.js --minify --bundle --pure:React.createElement --define:process.env.TEST_BYPASS_TRACKED_POINTER="false" --define:__DEV__="false" ${sharedOptions[@]} $@ &
+NODE_ENV=development npx esbuild $input --format=esm --outfile=$DST/$name.dev.esmbundle.js           --bundle --pure:React.createElement --define:process.env.TEST_BYPASS_TRACKED_POINTER="false" --define:__DEV__="true" ${sharedOptions[@]} $@ &
+
 # Generate ESM types
 tsc --emitDeclarationOnly --outDir $DST &
 

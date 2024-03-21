@@ -1,5 +1,5 @@
 {
-  "name": "@headlessui/vue",
+  "name": "@chatium/headlessui_vue",
   "version": "1.7.16",
   "description": "A set of completely unstyled, fully accessible UI components for Vue 3, designed to integrate beautifully with Tailwind CSS.",
   "main": "dist/index.cjs",
